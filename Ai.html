@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Dashboard</title>
+  <link rel="stylesheet" href="Ai.css">
+  < script src="Ai.js">
+  </script>
+</head>
+
+<body>
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>MyBoard</h2>
+      <nav>
+        <a class="active" href="#">Dashboard</a>
+        <a href="#">Users</a>
+        <a href="#">Posts</a>
+        <a href="#">Settings</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+      <header class="topbar">
+        <h1>Dashboard Overview</h1>
+        <input type="text" id="search" placeholder="Search users...">
+      </header>
+
+      <!-- Stat Cards -->
+      <section class="stats">
+        <div class="card">
+          <h3>Total Users</h3>
+          <p id="totalUsers">96</p>
+        </div>
+        <div class="card">
+          <h3>Total Posts</h3>
+          <p id="totalPosts">20</p>
+        </div>
+        <div class="card">
+          <h3>Completed</h3>
+          <p>82%</p>
+        </div>
+        <div class="card">
+          <h3>Revenue</h3>
+          <p>$4,200</p>
+        </div>
+      </section>
+
+      <!-- Data Table -->
+      <section class="content-box">
+        <h2>Users from API</h2>
+        <div id="userList" class="user-grid">Loading...</div>
+      </section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+
+</html>
