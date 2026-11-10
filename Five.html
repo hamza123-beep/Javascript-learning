@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+     
+   
+    
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    h4 {
+        background: white;
+        width: 90%;
+        max-width: 420px;
+        text-align: center;
+        padding: 25px 20px 10px;
+        font-size: 26px;
+        color: #333;
+        border-radius: 20px 20px 0 0;
+        margin-top: 20px;
+    }
+
+    #choose {
+        width: 90%;
+        max-width: 420px;
+        padding: 14px 16px;
+        border: none;
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+        font-size: 16px;
+        outline: none;
+        cursor: pointer;
+        background: white;
+    }
+
+    #choose:focus {
+        border-color: #667eea;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+    }
+
+    #para {
+        background: white;
+        width: 90%;
+        max-width: 420px;
+        min-height: 70px;
+        text-align: center;
+        padding: 20px;
+        font-size: 18px;
+        font-weight: 600;
+        color: #667eea;
+        border-radius: 0 0 20px 20px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        margin-bottom: 20px;
+    }
+
+    #para:empty {
+        display: none;
+    }
+    
+    /* When para has text, show it nicely */
+    #para:not(:empty) {
+        display: block;
+        animation: pop 0.4s ease;
+    }
+
+    @keyframes pop {
+        from { transform: scale(0.9); opacity: 0; }
+        to { transform: scale(1); opacity: 1; }
+    }
+</style>
+ 
+</style>
+    
+    <!-- <input type="text" id="text1" placeholder="enter text"> -->
+<h4>Select a Car</h4>
+    <select id="choose" onchange="selectCar()">
+        <option value="BMW">BMW</option>
+        <option value="Audi">Audi</option>
+        <option value="Toyota">Toyota</option>
+    </select>
+<form id="myForm">
+
+    <input type="text" id="name" placeholder="Enter your name">
+
+    <button type="submit">Submit</button>
+
+</form>
+    <p id="para"></p>
+    <script>
+        function selectCar() {
+            var car = document.getElementById("choose").value;
+            document.getElementById("para").innerHTML = "You selected: " + car;
+        }
+        let form = document.querySelector("#myForm");
+
+form.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    let name = document.querySelector("#name").value;
+
+    console.log("Welcome " + name);
+
+});
+    </script>
+</body>
+
+</html>

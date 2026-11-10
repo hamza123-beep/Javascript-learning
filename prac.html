@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<h2 id="time">0</h2>
+
+<button id="start">Start</button>
+<button id="stop">Stop</button>
+<button id="reset">Reset</button>
+
+<script>
+let time = document.getElementById("time");
+let start = document.getElementById("start");
+let stop = document.getElementById("stop");
+let reset = document.getElementById("reset");
+
+let count = 0;
+let timer;
+
+start.addEventListener("click", function() {
+    timer = setInterval(function() {
+        count++;
+        time.innerText = count;
+    }, 1000);
+});
+
+stop.addEventListener("click", function() {
+    clearInterval(timer);
+});
+
+reset.addEventListener("click", function() {
+    clearInterval(timer);
+    count = 0;
+    time.innerText = count;
+});
+</script>
+</body>
+</html>

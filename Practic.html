@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>My Card List</h2>
+
+<input id="item" placeholder="Enter item name">
+<button id="add">Add Card</button>
+
+<div id="cards"></div>
+
+<script>
+
+let input = document.getElementById("item");
+let addBtn = document.getElementById("add");
+let cards = document.getElementById("cards");
+
+addBtn.addEventListener("click", function() {
+
+    let name = input.value;
+
+    if (name === "") {
+        alert("Please enter a name");
+        return;
+    }
+
+    let card = document.createElement("div");
+
+    let heading = document.createElement("h3");
+    heading.innerText = name;
+
+    let btn = document.createElement("button");
+    btn.innerText = "Remove";
+
+    btn.addEventListener("click", function() {
+        card.remove();
+    });
+
+    card.appendChild(heading);
+    card.appendChild(btn);
+
+    cards.appendChild(card);
+
+    input.value = "";
+
+});
+
+</script>
+
+</body>
+</html>

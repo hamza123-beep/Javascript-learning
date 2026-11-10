@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Debounce Example</title>
+</head>
+
+<body>
+
+    <!-- <input type="text" id="search" placeholder="Search here"> -->
+
+    <script>
+        // function debounce(callback, delay) {
+//             le
+//             return functiont timer;
+//  () {
+//                 clearTimeout(timer);
+
+//                 timer = setTimeout(function () {
+//                     callback();
+//                 }, delay);
+//             };
+//         }
+
+//         let input = document.getElementById("search");
+
+//         function search() {
+//             console.log("Searching:", input.value);
+//         }
+
+//         let betterSearch = debounce(search, 300);
+
+//         input.addEventListener("input", betterSearch);
+let key = prompt("Enter key you want to set")
+let value = prompt("Enter value you want to set")
+
+localStorage.setItem(key, value)
+
+console.log(`The value at ${key} is ${localStorage.getItem(key)}`)
+    </script>
+
+</body>
+
+</html>

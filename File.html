@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f4f8;
+            margin: 0;
+            padding: 30px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: auto;
+            padding: 25px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            box-sizing: border-box;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            width: auto;
+        }
+
+        .option {
+            display: inline;
+            font-weight: normal;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background-color: #1769aa;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #104d80;
+        }
+
+        #message {
+            text-align: center;
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<form id="registrationForm">
+    <h2>Registration Form</h2>
+
+    <!-- Text input -->
+    <label for="fullname">Full Name:</label>
+    <input
+        type="text"
+        id="fullname"
+        name="fullname"
+        placeholder="Enter your full name"
+        minlength="3"
+        required
+    >
+
+    <!-- Email input -->
+    <label for="email">Email Address:</label>
+    <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="example@email.com"
+        required
+    >
+
+    <!-- Password input -->
+    <label for="password">Password:</label>
+    <input
+        type="password"
+        id="password"
+        name="password"
+        minlength="8"
+        required
+    >
+
+    <!-- Number input -->
+    <label for="age">Age:</label>
+    <input
+        type="number"
+        id="age"
+        name="age"
+        min="18"
+        max="100"
+        required
+    >
+
+    <!-- Date input -->
+    <label for="dob">Date of Birth:</label>
+    <input
+        type="date"
+        id="dob"
+        name="dob"
+        required
+    >
+
+    <!-- Radio buttons -->
+    <label>Gender:</label>
+    <input type="radio" id="male" name="gender"
+           value="Male" required>
+    <label class="option" for="male">Male</label>
+
+    <input type="radio" id="female" name="gender"
+           value="Female">
+    <label class="option" for="female">Female</label>
+
+    <!-- Select dropdown -->
+    <label for="country">Country:</label>
+    <select id="country" name="country" required>
+        <option value="">-- Select Country --</option>
+        <option value="Pakistan">Pakistan</option>
+        <option value="India">India</option>
+        <option value="UK">United Kingdom</option>
+        <option value="USA">United States</option>
+    </select>
+
+    <!-- Text area -->
+    <label for="address">Address:</label>
+    <textarea
+        id="address"
+        name="address"
+        rows="3"
+        placeholder="Enter your address"
+        required
+    ></textarea>
+
+    <!-- Checkbox -->
+    <input
+        type="checkbox"
+        id="terms"
+        name="terms"
+        required
+    >
+    <label class="option" for="terms">
+        I agree to the terms and conditions
+    </label>
+
+    <!-- Submit and reset buttons -->
+    <button type="submit">Register</button>
+    <button type="reset">Reset Form</button>
+
+    <p id="message" role="status" aria-live="polite"></p>
+</form>
+
+<script>
+    const form = document.getElementById("registrationForm");
+    const message = document.getElementById("message");
+
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
+
+        message.textContent = "Form submitted successfully!";
+    });
+
+    form.addEventListener("reset", function() {
+        message.textContent = "";
+    });
+</script>
+
+</body>
+</html>
