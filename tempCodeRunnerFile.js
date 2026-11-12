@@ -188,3 +188,8 @@ async function getData() {
 }
 
 getData();
+function fetchData() {
+
+    fetch("https://jsonplaceholder.typicode.com/posts/1")
+    
+    
